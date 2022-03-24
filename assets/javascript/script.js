@@ -1,4 +1,11 @@
 //view high scores link in top right of page
+var timeLeft =  75;
+var downloadTimer = setINterval(function(){
+    if (timeleft <=0){
+        clearInterval(downloadTimer);
+        document.getElementById("countdown-timer").value = 75 - timeleft;
+        timeleft-=1;
+    } 1000;
 
 //time limit for quiz posted in top right of page. 75 seconds.
 
@@ -7,8 +14,49 @@ var questions= [
     {
         question :'commonly used data types DO not include:',
         choiceA:  'strings',
+        choiceB: 'booleans',
+        choiceC: 'alerts',
+        choiceD: 'numbers',
+        answer: 'alerts'
+
+    },
+    {
+        question :'The condition of an if/else statement is enlcosed with      . ',
+        choiceA: 'quotes',
+        choiceB: 'curly brackets',
+        choiceC: 'parenthesis',
+        choiceD: 'square brackets',
+        answer: 'parenthesis'
+
+    },
+    {
+        question :'Arrays in Javascript can be used to store:',
+        choiceA: 'numbers and strings',
+        choiceB: 'other arrays',
+        choiceC: 'alerts',
+        choiceD: 'all of the above',
+        answer: 'all of the above'
+
+    },
+    {
+        question :'String values must be enclosed within        when being assigned to variables',
+        choiceA: 'commas',
+        choiceB: 'curly brackets',
+        choiceC: 'booleans',
+        choiceD: 'quotes',
+        answer: 'parenthesis'
+
+    },
+    {
+        question :'A very useful tool used during development and debugging for printing content to the debugger is:',
+        choiceA: 'Javascript',
+        choiceB: 'terminal/bash',
+        choiceC: 'alerts',
+        choiceD: 'console.log',
+        answer: 'console.log'
 
     }
+
 ];
 
 
