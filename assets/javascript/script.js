@@ -1,11 +1,14 @@
 //view high scores link in top right of page
-var timeLeft =  75;
-var downloadTimer = setINterval(function(){
-    if (timeleft <=0){
-        clearInterval(downloadTimer);
-        document.getElementById("countdown-timer").value = 75 - timeleft;
-        timeleft-=1;
-    } 1000;
+var timeleft = 75;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    document.getElementById("countdown-timer").innerHTML = "Finished";
+  } else {
+    document.getElementById("countdown-timer").innerHTML = timeleft + " seconds remaining";
+  }
+  timeleft -= 1;
+}, 1000);
 
 //time limit for quiz posted in top right of page. 75 seconds.
 
