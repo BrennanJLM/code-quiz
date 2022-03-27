@@ -84,13 +84,8 @@ function clearStatusClass(element) {
     element.classList.remove("wrong")
 }}
 
-// var startTimer = Date.now();
-// setInterval(function() {
-//     var delta = Date.now() - 75000; 
-//     var delta = Date.end() - 0;
-//     output (Math.floor(delta / 1000)); 
-//     output (new Date() .toUTCString());
-// }, 1000);
+
+
 function startTimer () {
     var timer = setInterval(function() {
       
@@ -106,7 +101,23 @@ function startTimer () {
     },1000)
 }
 
-localStorage.setItem("highScores", JSON.stringify([]))
+
+var saveScores = function () {
+    localStorage.setItem("highscores", JSON.stringify(highScores));
+}
+
+var loadScores = function () {
+    var savedScores = localStorage.getItem("scores")
+
+    if (!savedScores) {
+        return false;
+    }
+    console.log("Loaded scores successfully");
+    savedScores = Json.parse(savedScores);
+    console.log(savedScores);
+    highScores = savedScores
+}
+
 
 
 
