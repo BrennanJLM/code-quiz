@@ -3,7 +3,8 @@ var nextButton = document.getElementById("next-btn")
 var questionContainerElement = document.getElementById("question-container")
 var questionElement = document.getElementById("question")
 var answerButtonsElement = document.getElementById("answer-buttons")
-var wrongAnswers = document.getElementById("wrong-answers")
+var secondsLeft = 0
+var timerElement = document.querySelector(".timer")
 
 var shuffledQuestions, currentQuestionIndex
 
@@ -14,11 +15,14 @@ nextButton.addEventListener("click", () => {
 })
 
 function startQuiz() {
+  secondsLeft = 75
   startButton.classList.add("hide")
   shuffledQuestions = questions.sort(() => Math.random() - .5)
   currentQuestionIndex = 0
   questionContainerElement.classList.remove("hide")
   setNextQuestion()
+  timerElement.innerHTML = `seconds left: ${secondsLeft}`
+  startTimer()
 }
 
 function setNextQuestion() {
@@ -27,6 +31,7 @@ function setNextQuestion() {
 }
 
 function showQuestion(question) {
+
     questionElement.innerText = question.question
     question.answers.forEach(answer => {
         var button = document.createElement("button")
@@ -68,6 +73,9 @@ function setStatusClass(element, correct) {
         element.classList.add("correct")
     } else {
         element.classList.add("wrong")
+        var penalty = 2.5
+        //secondsLeft -= penalty
+        console.log(secondsLeft = secondsLeft - penalty)
     }
 }
 
@@ -76,13 +84,30 @@ function clearStatusClass(element) {
     element.classList.remove("wrong")
 }}
 
-var start = Date.now();
-setInterval(function() {
-    var delta = Date.now() - 75000; 
-    var delta = Date.end() - 0;
-    output (Math.floor(delta / 1000)); 
-    output (new Date() .toUTCString());
-}, 1000);
+// var startTimer = Date.now();
+// setInterval(function() {
+//     var delta = Date.now() - 75000; 
+//     var delta = Date.end() - 0;
+//     output (Math.floor(delta / 1000)); 
+//     output (new Date() .toUTCString());
+// }, 1000);
+function startTimer () {
+    var timer = setInterval(function() {
+      
+      if (secondsLeft > 0) {
+          secondsLeft -- 
+          timerElement.innerHTML = `seconds left: ${secondsLeft}`
+       console.log(secondsLeft)
+      }
+      else {
+          clearInterval(timer)
+      }
+      
+    },1000)
+}
+
+localStorage.setItem("highScores", JSON.stringify([]))
+
 
 
 var questions = [
