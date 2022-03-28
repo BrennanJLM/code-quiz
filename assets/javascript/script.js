@@ -96,10 +96,13 @@ function startTimer () {
       }
       else {
           clearInterval(timer)
+          var initialsEl = document.getElementById("init")
+          localStorage.setItem("init", initialsEl.value)
+          }
       }
       
     },1000)
-}
+
 
 
 
@@ -107,8 +110,8 @@ function startTimer () {
 
 
 var saveScores = function () {
-    localStorage.setitem("init", JSON.stringify(highScores));
-    console.log("init")
+    localStorage.setitem("text", JSON.stringify(highScores));
+    console.log("text")
 }
 
 // var loadScores = function () {
