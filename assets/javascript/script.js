@@ -102,21 +102,26 @@ function startTimer () {
 }
 
 
+
+
+
+
 var saveScores = function () {
-    localStorage.setItem("highscores", JSON.stringify(highScores));
+    localStorage.setitem("init", JSON.stringify(highScores));
+    console.log("init")
 }
 
-var loadScores = function () {
-    var savedScores = localStorage.getItem("scores")
+// var loadScores = function () {
+//     var savedScores = localStorage.getItem("scores")
 
-    if (!savedScores) {
-        return false;
-    }
-    console.log("Loaded scores successfully");
-    savedScores = Json.parse(savedScores);
-    console.log(savedScores);
-    highScores = savedScores
-}
+//     if (!savedScores) {
+//         return false;
+//     }
+//     console.log("Loaded scores successfully");
+//     savedScores = Json.parse(savedScores);
+//     console.log(savedScores);
+//     highScores = savedScores
+// }
 
 
 
