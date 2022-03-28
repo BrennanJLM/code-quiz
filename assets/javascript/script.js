@@ -5,7 +5,7 @@ var questionElement = document.getElementById("question")
 var answerButtonsElement = document.getElementById("answer-buttons")
 var secondsLeft = 0
 var timerElement = document.querySelector(".timer")
-
+var timer;
 var shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener("click", startQuiz)
@@ -88,7 +88,7 @@ function clearStatusClass(element) {
 
 
 function startTimer () {
-    var timer = setInterval(function() {
+    timer = setInterval(function() {
       
       if (secondsLeft > 0) {
           secondsLeft -- 
