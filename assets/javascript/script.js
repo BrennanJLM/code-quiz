@@ -65,6 +65,7 @@ function selectAnswer(e) {
 }   else {
     startButton.innerText = "Restart"
     startButton.classList.remove ("hide")
+    clearInterval(timer)
 }
 
 function setStatusClass(element, correct) {
@@ -99,31 +100,20 @@ function startTimer () {
           var initialsEl = document.getElementById("init")
           localStorage.setItem("init", initialsEl.value)
           }
-      }
-      
     },1000)
-
-
-
-
-
-
-
-var saveScores = function () {
-    localStorage.setitem("text", JSON.stringify(highScores));
-    console.log("text")
 }
 
-// var loadScores = function () {
-//     var savedScores = localStorage.getItem("scores")
 
-//     if (!savedScores) {
-//         return false;
+// var loadScores = function () {
+//     var savedScores = localStorage.getItem("init")
+
+//    if (!savedScores) {
+//          return false;
 //     }
-//     console.log("Loaded scores successfully");
-//     savedScores = Json.parse(savedScores);
-//     console.log(savedScores);
-//     highScores = savedScores
+//     console.log("init");
+//    savedScores = Json.parse(savedScores);
+//    console.log(savedScores);
+//    initialsEl = savedScores
 // }
 
 
