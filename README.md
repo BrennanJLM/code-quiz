@@ -14,13 +14,14 @@ Open your coding software, select "open file" and locate the module-3-challenge 
 
 ## Usage
 - This website's main purpose is to serve as a quiz for users to use to answer randomized questions. The user will:
-- Be presented with a series of prompts for password criteria
-- Select which criteria to include in the password
-- Choose a length of at least 8 characters and no more than 128 characters
-- Confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-- Be validated and at least one character type should be selected
-- Then a password is generated that matches the selected criteria
-- Then the password is displayed written to the page
+- Be presented with a series of randomized questions to answer
+- Answer the question via multiple choice answers
+- If right, there is no penalty
+- If wrong there is a 10 second penalty
+- Game ends when all questions are answered, or the clock reaches zero
+- When the game ends it prompts you to enter your initials
+- The page then stores the score, and initial within local storage
+- The scores are then loaded from local storage, to a leaderboard
 
 ## Collaborators and References
 - Cory Sillaots
