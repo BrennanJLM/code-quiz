@@ -13,6 +13,8 @@ nextButton.addEventListener("click", () => {
     currentQuestionIndex++
     setNextQuestion()
 })
+loadScores()
+
 
 function startQuiz() {
   secondsLeft = 75
@@ -65,7 +67,7 @@ function selectAnswer(e) {
 }   else {
     startButton.innerText = "Restart"
     startButton.classList.remove ("hide")
-    clearInterval(timer)
+    endGame()
 }
 
 function setStatusClass(element, correct) {
@@ -85,36 +87,41 @@ function clearStatusClass(element) {
     element.classList.remove("wrong")
 }}
 
-
+function endGame() {
+ var initialsEl = document.getElementById("init")
+ console.log("initEL: " + initialsEl.value)
+ localStorage.setItem("init", `${initialsEl.value}: ${score} - ${75 - secondsLeft}`)
+ clearInterval(timer)
+}
 
 function startTimer () {
     timer = setInterval(function() {
-      
+     
       if (secondsLeft > 0) {
-          secondsLeft -- 
+          secondsLeft --
           timerElement.innerHTML = `seconds left: ${secondsLeft}`
        console.log(secondsLeft)
       }
       else {
-          clearInterval(timer)
-          var initialsEl = document.getElementById("init")
-          localStorage.setItem("init", initialsEl.value)
-          }
+endGame()
+        }
     },1000)
 }
 
 
-// var loadScores = function () {
-//     var savedScores = localStorage.getItem("init")
+ function loadScores() {
+    var savedScores = localStorage.getItem("init")
 
-//    if (!savedScores) {
-//          return false;
-//     }
-//     console.log("init");
-//    savedScores = Json.parse(savedScores);
-//    console.log(savedScores);
-//    initialsEl = savedScores
-// }
+    if (!savedScores) {
+          return false;
+     }
+     console.log("init");
+    savedScores = Json.parse(savedScores);
+    console.log(savedScores);
+    initialsEl = savedScores
+
+
+ }
 
 
 
