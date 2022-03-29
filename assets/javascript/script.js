@@ -58,9 +58,9 @@ function selectAnswer(e) {
     var selectedButton = e.target
     var correct = selectedButton.dataset.correct
     setStatusClass(document.body, correct)
-    Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
+    // Array.from(answerButtonsElement.children).forWrong(button => {
+        // setStatusClass(button, button.dataset.correct)
+    // })
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove("hide")
 }   else {
@@ -118,6 +118,7 @@ var loadScores = function () {
    savedScores = Json.parse(savedScores);
    console.log(savedScores);
    initialsEl = savedScores
+   loadScores()
 }
 
 
