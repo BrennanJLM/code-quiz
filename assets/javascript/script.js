@@ -75,7 +75,7 @@ function setStatusClass(element, correct) {
         element.classList.add("correct")
     } else {
         element.classList.add("wrong")
-        var penalty = 2.5
+        var penalty = 10
         //secondsLeft -= penalty
         console.log(secondsLeft = secondsLeft - penalty)
     }
