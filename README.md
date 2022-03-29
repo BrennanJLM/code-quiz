@@ -22,7 +22,13 @@ Open your coding software, select "open file" and locate the module-3-challenge 
 - When the game ends it prompts you to enter your initials
 - The page then stores the score, and initial within local storage
 - The scores are then loaded from local storage, to a leaderboard
-
+    
+## Screenshot
+![Screenshot (8)](https://user-images.githubusercontent.com/98754293/160681502-ee27d3f7-b77a-454d-9673-85a8a0c029b6.png)
+    
+## Link to page
+https://brennanjlm.github.io/code-quiz/    
+    
 ## Collaborators and References
 - Cory Sillaots
     https://github.com/CorySillaots
