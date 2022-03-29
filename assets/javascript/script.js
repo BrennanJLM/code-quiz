@@ -108,17 +108,17 @@ endGame()
 }
 
 
-// var loadScores = function () {
-//     var savedScores = localStorage.getItem("init")
+var loadScores = function () {
+    var savedScores = localStorage.getItem("init")
 
-//    if (!savedScores) {
-//          return false;
-//     }
-//     console.log("init");
-//    savedScores = Json.parse(savedScores);
-//    console.log(savedScores);
-//    initialsEl = savedScores
-// }
+   if (!savedScores) {
+         return false;
+    }
+    console.log("init");
+   savedScores = Json.parse(savedScores);
+   console.log(savedScores);
+   initialsEl = savedScores
+}
 
 
 
