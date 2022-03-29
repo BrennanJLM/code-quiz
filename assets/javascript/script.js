@@ -13,8 +13,6 @@ nextButton.addEventListener("click", () => {
     currentQuestionIndex++
     setNextQuestion()
 })
-loadScores()
-
 
 function startQuiz() {
   secondsLeft = 75
@@ -24,6 +22,7 @@ function startQuiz() {
   questionContainerElement.classList.remove("hide")
   setNextQuestion()
   timerElement.innerHTML = `seconds left: ${secondsLeft}`
+  console.log("init: " + localStorage.getItem("init"))
   startTimer()
 }
 
@@ -90,7 +89,7 @@ function clearStatusClass(element) {
 function endGame() {
  var initialsEl = document.getElementById("init")
  console.log("initEL: " + initialsEl.value)
- localStorage.setItem("init", `${initialsEl.value}: ${score} - ${75 - secondsLeft}`)
+ localStorage.setItem("init", `${initialsEl.value}: ${secondsLeft}`)
  clearInterval(timer)
 }
 
@@ -109,19 +108,17 @@ endGame()
 }
 
 
- function loadScores() {
-    var savedScores = localStorage.getItem("init")
+// var loadScores = function () {
+//     var savedScores = localStorage.getItem("init")
 
-    if (!savedScores) {
-          return false;
-     }
-     console.log("init");
-    savedScores = Json.parse(savedScores);
-    console.log(savedScores);
-    initialsEl = savedScores
-
-
- }
+//    if (!savedScores) {
+//          return false;
+//     }
+//     console.log("init");
+//    savedScores = Json.parse(savedScores);
+//    console.log(savedScores);
+//    initialsEl = savedScores
+// }
 
 
 
